@@ -1,0 +1,15 @@
+name: Reusable Workflow
+on:
+  workflow_call:
+    inputs:
+      node:
+        required: true
+        type: string
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Output the input value
+        run: |
+          echo "El dato que ingresa es: ${{ inputs.node }}"
